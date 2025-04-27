@@ -1,0 +1,801 @@
+/* DashboardNew.css - Elite Web3 Financial Platform */
+
+/* Base Dashboard Layout */
+.dashboard-container {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f2d, #1a1a40);
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+  
+  /* Dashboard Header with 3D Text Effect */
+  .dashboard-header {
+    padding: 3rem 0;
+    position: relative;
+    text-align: center;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+    color: transparent;
+    background: linear-gradient(90deg, #ff5c8d, #ff8c70);
+    background-clip: text;
+    -webkit-background-clip: text;
+    letter-spacing: -1px;
+    position: relative;
+    text-shadow: 0 0 10px rgba(255, 92, 141, 0.3);
+  }
+  
+  /* Grid pattern overlay */
+  .grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 25px 25px;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* Glowing orbs */
+  .glowing-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* 3D Floating Card Wrapper */
+  .card-container {
+    perspective: 1000px;
+    padding: 0 3rem;
+    margin-bottom: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Info Summary Card with Glassmorphism */
+  .info-summary {
+    background: rgba(27, 27, 50, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .info-summary:hover {
+    transform: translateY(-5px) translateZ(10px);
+  }
+  
+  /* Card Glow Effect */
+  .info-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+      rgba(255, 92, 141, 0) 0%, 
+      rgba(255, 92, 141, 0.03) 50%, 
+      rgba(255, 92, 141, 0) 100%);
+    z-index: 1;
+    transform: translateY(0%);
+    animation: shine 6s infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+  
+  /* Content Styles for Cards */
+  .info-summary h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  .info-summary p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  /* Wallet Connection Status Area */
+  .wallet-status-area {
+    margin: 2rem 0 4rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Loans Grid Layout */
+  .loans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  
+  /* Section Header with Icon */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+    position: relative;
+  }
+  
+  .section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  .section-header::before {
+    content: '';
+    width: 10px;
+    height: 40px;
+    background: linear-gradient(to bottom, #ff5c8d, #ff8c70);
+    margin-right: 1rem;
+    border-radius: 5px;
+  }
+  
+  /* Premium Loan Card */
+  .loan-card-premium {
+    background: linear-gradient(135deg, rgba(27, 27, 50, 0.8) 0%, rgba(27, 27, 50, 0.95) 100%);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+  }
+  
+  .loan-card-premium:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  }
+  
+  /* Card Top Border Glow */
+  .loan-card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff5c8d, #ff8c70);
+    z-index: 2;
+  }
+  
+  /* Card Header */
+  .loan-card-header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .loan-card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+  
+  .loan-card-header h3 svg {
+    margin-right: 0.8rem;
+    color: #ff5c8d;
+  }
+  
+  /* Status Badge with Pulse Animation */
+  .status-badge-premium {
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .status-badge-premium::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+  
+  .status-badge-premium.pending {
+    background: rgba(253, 203, 110, 0.15);
+    color: #fdcb6e;
+  }
+  
+  .status-badge-premium.pending::before {
+    background: #fdcb6e;
+    box-shadow: 0 0 0 0 rgba(253, 203, 110, 1);
+    animation: pulse 2s infinite;
+  }
+  
+  .status-badge-premium.active {
+    background: rgba(0, 184, 148, 0.15);
+    color: #00b894;
+  }
+  
+  .status-badge-premium.active::before {
+    background: #00b894;
+    box-shadow: 0 0 0 0 rgba(0, 184, 148, 1);
+    animation: pulse 2s infinite;
+  }
+  
+  .status-badge-premium.repaid {
+    background: rgba(116, 125, 240, 0.15);
+    color: #747df0;
+  }
+  
+  .status-badge-premium.repaid::before {
+    background: #747df0;
+  }
+  
+  .status-badge-premium.defaulted {
+    background: rgba(214, 48, 49, 0.15);
+    color: #d63031;
+  }
+  
+  .status-badge-premium.defaulted::before {
+    background: #d63031;
+    box-shadow: 0 0 0 0 rgba(214, 48, 49, 1);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+  
+  /* Loan Card Body */
+  .loan-card-body {
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Loan Details with Modern Key-Value Pairs */
+  .loan-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+  }
+  
+  .loan-detail:last-child {
+    border-bottom: none;
+  }
+  
+  .detail-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  .detail-value {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  .detail-value.highlight {
+    color: #ff5c8d;
+    font-weight: 700;
+  }
+  
+  /* Loan Card Footer with Actions */
+  .loan-card-footer {
+    display: flex;
+    padding: 1.5rem 2rem;
+    background: rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Premium Button Design */
+  .btn-premium {
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-premium svg {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .btn-premium::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0;
+  }
+  
+  .btn-premium:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .btn-premium:hover::after {
+    left: 100%;
+    opacity: 1;
+  }
+  
+  .btn-premium.primary {
+    background: linear-gradient(45deg, #ff5c8d, #ff8c70);
+    border: none;
+    box-shadow: 0 10px 20px rgba(255, 92, 141, 0.3);
+    margin-right: 1rem;
+  }
+  
+  .btn-premium.primary:hover {
+    box-shadow: 0 15px 30px rgba(255, 92, 141, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  /* No Loans State with Illustrated Elements */
+  .no-loans {
+    background: rgba(27, 27, 50, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .no-loans h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #ff5c8d, #ff8c70);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .no-loans p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+  }
+  
+  .btn-apply {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(45deg, #ff5c8d, #ff8c70);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 15px 30px rgba(255, 92, 141, 0.3);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-apply svg {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+  }
+  
+  .btn-apply::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0;
+  }
+  
+  .btn-apply:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 92, 141, 0.4);
+  }
+  
+  .btn-apply:hover::after {
+    left: 100%;
+    opacity: 1;
+  }
+  
+  /* Connect Wallet Prompt */
+  .connect-prompt-premium {
+    background: rgba(27, 27, 50, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .connect-icon {
+    font-size: 3rem;
+    color: #ff5c8d;
+    margin-bottom: 1.5rem;
+  }
+  
+  .connect-prompt-premium p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  /* Repayment Modal Styling */
+  .repay-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 10, 25, 0.9);
+    backdrop-filter: blur(10px);
+  }
+  
+  .repay-modal {
+    background: linear-gradient(135deg, rgba(30, 30, 60, 0.9), rgba(20, 20, 40, 0.95));
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  .repay-modal h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .repay-modal p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .loan-identifier {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .loan-identifier strong {
+    color: #ff5c8d;
+    font-weight: 700;
+  }
+  
+  /* Enhanced Form Styling */
+  .form-group {
+    margin-bottom: 2rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .form-control {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: rgba(255, 92, 141, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(255, 92, 141, 0.2);
+  }
+  
+  .form-text {
+    display: block;
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+  }
+  
+  /* Modal Action Buttons */
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+  
+  .btn-cancel {
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .btn-confirm {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #ff5c8d, #ff8c70);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 92, 141, 0.3);
+  }
+  
+  .btn-confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 92, 141, 0.4);
+  }
+  
+  .btn-confirm:disabled {
+    background: #555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Loading Animation */
+  .loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Error and Success Messages */
+  .alert-error {
+    background: rgba(214, 48, 49, 0.1);
+    color: #ff6b6b;
+    border-left: 4px solid #ff6b6b;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+  
+  .alert-success {
+    background: rgba(0, 184, 148, 0.1);
+    color: #1dd1a1;
+    border-left: 4px solid #1dd1a1;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+  
+  /* Wallet styling overrides for dark theme */
+  .wallet-connect {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+  }
+  
+  .wallet-connect h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .wallet-connect p {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .account-details {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+  
+  .account-details p {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .account-details strong {
+    color: white;
+  }
+  
+  .balance-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #00b894;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .loans-grid {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+    
+    .dashboard-header h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-container {
+      padding: 1rem;
+    }
+    
+    .dashboard-header h1 {
+      font-size: 2.5rem;
+    }
+    
+    .card-container {
+      padding: 0 1rem;
+    }
+    
+    .loans-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .loan-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .status-badge-premium {
+      margin-top: 0.8rem;
+    }
+    
+    .loan-card-footer {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .btn-premium {
+      width: 100%;
+    }
+    
+    .repay-modal {
+      padding: 2rem;
+      width: 95%;
+    }
+  }

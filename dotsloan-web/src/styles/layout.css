@@ -1,0 +1,41 @@
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #ff5c8d, #000000);
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+  }
+  
+  .navbar:hover {
+    background: linear-gradient(135deg, #ff5c8d, rgba(0, 0, 0, 0.6)); /* Dimmer effect */
+  }
+  
+  .navbar .nav-logo {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding-left: 20px;
+    text-transform: uppercase;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  
+  .navbar .nav-links .nav-link {
+    font-size: 1rem;
+    color: white;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .navbar .nav-links .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.3); /* Dim the background on hover */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  

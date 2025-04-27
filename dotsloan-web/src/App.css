@@ -1,0 +1,605 @@
+.App {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  color: #e6007a;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #e6007a;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.home-container {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.cta-container {
+  margin: 3rem 0;
+}
+
+.main-button, .submit-button {
+  background-color: #e6007a;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.loan-application {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dashboard {
+  padding: 1rem;
+}
+
+.loan-status {
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+.wallet-connect {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.connect-button {
+  background-color: #e6007a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.connect-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #e63946;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.account-details {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.wallet-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.wallet-info a {
+  color: #e6007a;
+  text-decoration: none;
+}
+
+.wallet-info a:hover {
+  text-decoration: underline;
+}
+
+
+.success-container {
+  background-color: #f0fff4;
+  border: 1px solid #2ecc71;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.application-details {
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 4px;
+  max-width: 400px;
+  margin: 1rem auto;
+  list-style-type: none;
+}
+
+.application-details li {
+  margin-bottom: 0.5rem;
+}
+
+.form-group small {
+  display: block;
+  color: #666;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.loans-container {
+  margin-top: 2rem;
+}
+
+.loan-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.loan-header {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.status-badge.pending {
+  background-color: #ffeaa7;
+  color: #d35400;
+}
+
+.status-badge.active {
+  background-color: #d6f5d6;
+  color: #27ae60;
+}
+
+.status-badge.completed {
+  background-color: #e0e0e0;
+  color: #2c3e50;
+}
+
+.loan-details {
+  padding: 1rem;
+}
+
+.loan-actions {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  display: flex;
+  gap: 1rem;
+}
+
+.action-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-button.repay {
+  background-color: #2ecc71;
+}
+
+.apply-button {
+  display: inline-block;
+  background-color: #e6007a;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.extension-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.install-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.account-select-container {
+  margin-top: 1rem;
+}
+
+.account-select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Wallet Connect Styles */
+.wallet-connect {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.extension-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.install-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.connect-button {
+  background-color: #e6007a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.connect-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #e63946;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.account-details {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.account-select-container {
+  margin-top: 1rem;
+}
+
+.account-select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Success Container Styles */
+.success-container {
+  background-color: #f0fff4;
+  border: 1px solid #2ecc71;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.application-details {
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 4px;
+  max-width: 400px;
+  margin: 1rem auto;
+  list-style-type: none;
+}
+
+.application-details li {
+  margin-bottom: 0.5rem;
+}
+
+/* Connect Prompt Styles */
+.connect-prompt {
+  background-color: #e8f4fd;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Apply Button Style */
+.apply-button {
+  display: inline-block;
+  background-color: #e6007a;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+/* Network info styles */
+.network-info {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Balance container styles */
+.balance-container {
+  background-color: #f0ffeb;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  border-left: 4px solid #2ecc71;
+}
+
+/* Loading container styles */
+.loading-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+/* Error message styles */
+.error-message {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  border-left: 4px solid #d32f2f;
+}
+
+/* Loan card styles */
+.loan-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.loan-header {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.status-badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.repaid {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-badge.defaulted {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.loan-details {
+  padding: 1rem;
+}
+
+.loan-actions {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  display: flex;
+  gap: 1rem;
+}
+
+.action-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-button.repay {
+  background-color: #28a745;
+}
+
+.loans-container {
+  margin-top: 2rem;
+}
+
+/* Info box styles */
+.info-box {
+  background-color: #e1f5fe;
+  border-left: 4px solid #03a9f4;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  color: #0288d1;
+}
+
+/* Transaction details styles */
+.tx-details {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.tx-details h3 {
+  margin-top: 0;
+}
+
+/* Note styles */
+.note {
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #fff3cd;
+  border-radius: 4px;
+  color: #856404;
+}
+
+/* Success message styles */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  border-left: 4px solid #28a745;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-button.cancel {
+  background-color: #6c757d;
+}

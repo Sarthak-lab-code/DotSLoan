@@ -1,0 +1,38 @@
+/* Margin and Padding Utilities */
+.mt-20 {
+    margin-top: 20px;
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  
+  .pt-20 {
+    padding-top: 20px;
+  }
+  
+  .pb-20 {
+    padding-bottom: 20px;
+  }
+  
+  /* Flexbox Utilities */
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Visibility Helpers */
+  .hidden {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+  }
+  
